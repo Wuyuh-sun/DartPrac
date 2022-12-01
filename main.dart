@@ -9,7 +9,7 @@ void main() {
   // x = 1.1;
 
   // var testData = 5;
-  // var testData2 = "SEX";
+  // var testData2 = "gang";
   // var numbers = [
   //   1,
   //   2,
@@ -23,17 +23,17 @@ void main() {
   // var name = "wuyu";
   // var age = 12;
   // var greeting =
-  //     "hello sexman, my name is $name nice to meet you!!! my age is ${age + 1}";
+  //     "hello gangman, my name is $name nice to meet you!!! my age is ${age + 1}";
 
   // print(greeting);
 
-  // var sex = "sex";
+  // var sex = "gang";
   // var oldFriends = ['nico', 'lunn'];
   // var newFriends = [
   //   'wuyu',
   //   'pig',
   //   'princess',
-  //   for (var friend in oldFriends) "sex $friend",
+  //   for (var friend in oldFriends) "gang $friend",
   // ];
   // print(newFriends);
 
@@ -43,10 +43,30 @@ void main() {
   //   'superpower': 'false',
   // };
 
-  List<Map<String, Object>> players = [
-    {'name': "nico", "xp": 199993.999},
-    {'name': "nico", "xp": 199993.999},
-  ];
+  // List<Map<String, Object>> players = [
+  //   {'name': "nico", "xp": 199993.999},
+  //   {'name': "nico", "xp": 199993.999},
+  // ];
 
-  print(players);
+  // print(players);
+
+  // List<int> numbers = [1, 2, 3, 4];
+  // numbers.add(1);
+  // numbers.add(1);
+  // numbers.add(1);
+  // print(numbers);
+
+  print(sayHello(
+    age: 12,
+    country: "daegu",
+    name: "yunha",
+  ));
+}
+
+String sayHello({
+  required String? name,
+  required int? age,
+  required String? country,
+}) {
+  return "Hello, you are $age, and you come from $country";
 }
