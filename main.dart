@@ -56,17 +56,25 @@ void main() {
   // numbers.add(1);
   // print(numbers);
 
-  print(sayHello(
-    age: 12,
-    country: "daegu",
-    name: "yunha",
-  ));
+  var arr = [
+    1,
+    "sad",
+    3,
+    4,
+  ];
+
+  var results = sayHello('nico', 12);
+  print(arr);
 }
 
-String sayHello({
-  required String? name,
-  required int? age,
-  required String? country,
-}) {
-  return "Hello, you are $age, and you come from $country";
+// String sayHello({
+//   required String? name,
+//   required int? age,
+//   required String? country,
+// }) {
+//   return "Hello, you are $age, and you come from $country";
+// }
+
+String sayHello(String name, int age, [String? country = "cuba", String? sex]) {
+  return 'Hello $name, you are $age years old from $country and sex = $sex';
 }
