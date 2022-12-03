@@ -11,22 +11,75 @@
 //   return "Hi ${userInfo['name']}";
 // }
 class Player {
-  String name;
+  final String name;
   int xp;
+  String team;
 
-  Player(this.name, this.xp);
+  Player.fromJson(Map<String, dynamic> playerJson)
+      : name = playerJson['name'],
+        xp = playerJson['xp'],
+        team = playerJson['team'];
 
   void sayHello() {
-    var name = "123";
-    print("hi my name is ${this.name}");
+    // var name = "123";
+    print("hi my name is ${name}");
   }
+
+  // Player(
+  //     {required this.name,
+  //     required this.xp,
+  //     required this.team,
+  //     required this.age});
+
+  // Player.createBluePlayer({
+  //   required String name,
+  //   required int age,
+  // })  : this.age = age,
+  //       this.name = name,
+  //       this.team = "blue",
+  //       this.xp = 0;
+
+  // Player.createRedPlayer(String name, int age)
+  //     : this.age = age,
+  //       this.name = name,
+  //       this.team = "red",
+  //       this.xp = 0;
+
 }
 
 void main() {
-  var player = Player("wuyu", 1500);
-  var player2 = Player("yunha", 2500);
-  player.sayHello();
-  player2.sayHello();
+  var apiData = [
+    {
+      "name": "yunha1",
+      "team": "red",
+      "xp": 0,
+    },
+    {
+      "name": "yunha2",
+      "team": "red",
+      "xp": 0,
+    },
+    {
+      "name": "yunha3",
+      "team": "red",
+      "xp": 0,
+    },
+  ];
+
+  apiData.forEach((item) {
+    var player = Player.fromJson(item);
+    // print(item);
+    player.sayHello();
+  });
+
+  // var bluePlayer = Player.createBluePlayer(
+  //   name: "yunha",
+  //   age: 20,
+  // );
+  // var redPlayer = Player.createRedPlayer("yunha", 20);
+
+  // bluePlayer.sayHello();
+  // redPlayer.sayHello();
 
   // print(reverseListOfNumbers([
   //   1,
