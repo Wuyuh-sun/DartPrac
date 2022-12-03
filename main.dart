@@ -1,17 +1,33 @@
-typedef ListOfInts = List<int>;
+// typedef ListOfInts = List<int>;
 
-ListOfInts reverseListOfNumbers(ListOfInts list) {
-  var reversed = list.reversed;
-  return reversed.toList();
-}
+// ListOfInts reverseListOfNumbers(ListOfInts list) {
+//   var reversed = list.reversed;
+//   return reversed.toList();
+// }
 
-typedef UserInfo = Map<String, String>;
+// typedef UserInfo = Map<String, String>;
 
-String sayHi(UserInfo userInfo) {
-  return "Hi ${userInfo['name']}";
+// String sayHi(UserInfo userInfo) {
+//   return "Hi ${userInfo['name']}";
+// }
+class Player {
+  String name;
+  int xp;
+
+  Player(this.name, this.xp);
+
+  void sayHello() {
+    var name = "123";
+    print("hi my name is ${this.name}");
+  }
 }
 
 void main() {
+  var player = Player("wuyu", 1500);
+  var player2 = Player("yunha", 2500);
+  player.sayHello();
+  player2.sayHello();
+
   // print(reverseListOfNumbers([
   //   1,
   //   2,
@@ -20,7 +36,7 @@ void main() {
   //   5,
   // ]));
 
-  print(sayHi({"name": "wuyu"}));
+  // print(sayHi({"name": "wuyu"}));
 }
 
 // void main() {
