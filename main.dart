@@ -10,19 +10,40 @@
 // String sayHi(UserInfo userInfo) {
 //   return "Hi ${userInfo['name']}";
 // }
-class Player {
-  final String name;
-  int xp;
-  String team;
 
-  Player.fromJson(Map<String, dynamic> playerJson)
-      : name = playerJson['name'],
-        xp = playerJson['xp'],
-        team = playerJson['team'];
+abstract class Human {
+  void walk();
+}
+
+enum Team { red, blue }
+
+enum XPLevel { beginner, medium, pro }
+
+enum Name { yunha, daehan, hansol, hee, min }
+
+class Player extends Human {
+  Name name;
+  XPLevel xp;
+  Team team;
+
+  // Player.fromJson(Map<String, dynamic>? playerJson)
+  //     : name = playerJson!['name'],
+  //       xp = playerJson['xp'],
+  //       team = playerJson['team'];
+
+  Player({
+    required this.name,
+    required this.xp,
+    required this.team,
+  });
+
+  void walk() {
+    print("walking");
+  }
 
   void sayHello() {
     // var name = "123";
-    print("hi my name is ${name}");
+    print("hi my name is ${name.name}");
   }
 
   // Player(
@@ -47,30 +68,44 @@ class Player {
 
 }
 
-void main() {
-  var apiData = [
-    {
-      "name": "yunha1",
-      "team": "red",
-      "xp": 0,
-    },
-    {
-      "name": "yunha2",
-      "team": "red",
-      "xp": 0,
-    },
-    {
-      "name": "yunha3",
-      "team": "red",
-      "xp": 0,
-    },
-  ];
+class Coach extends Human {
+  void walk() {
+    print("coach walking");
+  }
+}
 
-  apiData.forEach((item) {
-    var player = Player.fromJson(item);
-    // print(item);
-    player.sayHello();
-  });
+void main() {
+  var nico = Player(name: Name.yunha, xp: XPLevel.beginner, team: Team.red)
+    ..name = Name.min
+    ..xp = XPLevel.pro
+    ..team = Team.blue
+    ..walk();
+
+  var coach = Coach();
+  coach.walk();
+  // var apiData = [
+  //   {
+  //     "name": "yunha1",
+  //     "team": "red",
+  //     "xp": 0,
+  //   },
+  //   {
+  //     "name": "yunha2",
+  //     "team": "red",
+  //     "xp": 0,
+  //   },
+  //   {
+  //     "name": "yunha3",
+  //     "team": "red",
+  //     "xp": 0,
+  //   },
+  // ];
+
+  // apiData.forEach((item) {
+  //   var player = Player.fromJson(item);
+  //   // print(item);
+  //   player.sayHello();
+  // });
 
   // var bluePlayer = Player.createBluePlayer(
   //   name: "yunha",
