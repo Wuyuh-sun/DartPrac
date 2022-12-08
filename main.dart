@@ -1,3 +1,72 @@
+class Strong {
+  final double strengthLevel = 1500.99;
+}
+
+class QuickRunner {
+  void runQuick() {
+    print("runnnnnnnnnn!");
+  }
+}
+
+class Tall {
+  final double height = 1.99;
+}
+
+enum Team { blue, red }
+
+class Player with Strong, QuickRunner, Tall {
+  final Team team;
+
+  Player({
+    required this.team,
+  });
+
+}
+
+class Horse with Strong, QuickRunner {}
+
+class Kid with QuickRunner {}
+
+void main() {
+  var player = Player(
+    team: Team.red,
+  );
+  player.runQuick();
+}
+
+// class Human {
+//   final String name;
+//   Human({required this.name});
+//   void sayHello() {
+//     print("Hi my name is $name");
+//   }
+// }
+
+// enum Team { blue, red }
+
+// class Player extends Human {
+//   final Team team;
+
+//   Player({
+//     required this.team,
+//     required String name,
+//   }) : super(name: name);
+
+//   @override
+//   void sayHello() {
+//     super.sayHello();
+//     print("and I play for ${team.name}");
+//   }
+// }
+
+// void main() {
+//   var player = Player(
+//     team: Team.red,
+//     name: "yunha",
+//   );
+//   player.sayHello();
+// }
+
 // typedef ListOfInts = List<int>;
 
 // ListOfInts reverseListOfNumbers(ListOfInts list) {
@@ -11,121 +80,121 @@
 //   return "Hi ${userInfo['name']}";
 // }
 
-abstract class Human {
-  void walk();
-}
+// abstract class Human {
+//   void walk();
+// }
 
-enum Team { red, blue }
+// enum Team { red, blue }
 
-enum XPLevel { beginner, medium, pro }
+// enum XPLevel { beginner, medium, pro }
 
-enum Name { yunha, daehan, hansol, hee, min }
+// enum Name { yunha, daehan, hansol, hee, min }
 
-class Player extends Human {
-  Name name;
-  XPLevel xp;
-  Team team;
+// class Player extends Human {
+//   Name name;
+//   XPLevel xp;
+//   Team team;
 
-  // Player.fromJson(Map<String, dynamic>? playerJson)
-  //     : name = playerJson!['name'],
-  //       xp = playerJson['xp'],
-  //       team = playerJson['team'];
+//   // Player.fromJson(Map<String, dynamic>? playerJson)
+//   //     : name = playerJson!['name'],
+//   //       xp = playerJson['xp'],
+//   //       team = playerJson['team'];
 
-  Player({
-    required this.name,
-    required this.xp,
-    required this.team,
-  });
+//   Player({
+//     required this.name,
+//     required this.xp,
+//     required this.team,
+//   });
 
-  void walk() {
-    print("walking");
-  }
+//   void walk() {
+//     print("walking");
+//   }
 
-  void sayHello() {
-    // var name = "123";
-    print("hi my name is ${name.name}");
-  }
+//   void sayHello() {
+//     // var name = "123";
+//     print("hi my name is ${name.name}");
+//   }
 
-  // Player(
-  //     {required this.name,
-  //     required this.xp,
-  //     required this.team,
-  //     required this.age});
+//   // Player(
+//   //     {required this.name,
+//   //     required this.xp,
+//   //     required this.team,
+//   //     required this.age});
 
-  // Player.createBluePlayer({
-  //   required String name,
-  //   required int age,
-  // })  : this.age = age,
-  //       this.name = name,
-  //       this.team = "blue",
-  //       this.xp = 0;
+//   // Player.createBluePlayer({
+//   //   required String name,
+//   //   required int age,
+//   // })  : this.age = age,
+//   //       this.name = name,
+//   //       this.team = "blue",
+//   //       this.xp = 0;
 
-  // Player.createRedPlayer(String name, int age)
-  //     : this.age = age,
-  //       this.name = name,
-  //       this.team = "red",
-  //       this.xp = 0;
+//   // Player.createRedPlayer(String name, int age)
+//   //     : this.age = age,
+//   //       this.name = name,
+//   //       this.team = "red",
+//   //       this.xp = 0;
 
-}
+// }
 
-class Coach extends Human {
-  void walk() {
-    print("coach walking");
-  }
-}
+// class Coach extends Human {
+//   void walk() {
+//     print("coach walking");
+//   }
+// }
 
-void main() {
-  var nico = Player(name: Name.yunha, xp: XPLevel.beginner, team: Team.red)
-    ..name = Name.min
-    ..xp = XPLevel.pro
-    ..team = Team.blue
-    ..walk();
+// void main() {
+//   var nico = Player(name: Name.yunha, xp: XPLevel.beginner, team: Team.red)
+//     ..name = Name.min
+//     ..xp = XPLevel.pro
+//     ..team = Team.blue
+//     ..walk();
 
-  var coach = Coach();
-  coach.walk();
-  // var apiData = [
-  //   {
-  //     "name": "yunha1",
-  //     "team": "red",
-  //     "xp": 0,
-  //   },
-  //   {
-  //     "name": "yunha2",
-  //     "team": "red",
-  //     "xp": 0,
-  //   },
-  //   {
-  //     "name": "yunha3",
-  //     "team": "red",
-  //     "xp": 0,
-  //   },
-  // ];
+//   var coach = Coach();
+//   coach.walk();
+//   // var apiData = [
+//   //   {
+//   //     "name": "yunha1",
+//   //     "team": "red",
+//   //     "xp": 0,
+//   //   },
+//   //   {
+//   //     "name": "yunha2",
+//   //     "team": "red",
+//   //     "xp": 0,
+//   //   },
+//   //   {
+//   //     "name": "yunha3",
+//   //     "team": "red",
+//   //     "xp": 0,
+//   //   },
+//   // ];
 
-  // apiData.forEach((item) {
-  //   var player = Player.fromJson(item);
-  //   // print(item);
-  //   player.sayHello();
-  // });
+//   // apiData.forEach((item) {
+//   //   var player = Player.fromJson(item);
+//   //   // print(item);
+//   //   player.sayHello();
+//   // });
 
-  // var bluePlayer = Player.createBluePlayer(
-  //   name: "yunha",
-  //   age: 20,
-  // );
-  // var redPlayer = Player.createRedPlayer("yunha", 20);
+//   // var bluePlayer = Player.createBluePlayer(
+//   //   name: "yunha",
+//   //   age: 20,
+//   // );
+//   // var redPlayer = Player.createRedPlayer("yunha", 20);
 
-  // bluePlayer.sayHello();
-  // redPlayer.sayHello();
+//   // bluePlayer.sayHello();
+//   // redPlayer.sayHello();
 
-  // print(reverseListOfNumbers([
-  //   1,
-  //   2,
-  //   3,
-  //   4,
-  //   5,
-  // ]));
+//   // print(reverseListOfNumbers([
+//   //   1,
+//   //   2,
+//   //   3,
+//   //   4,
+//   //   5,
+//   // ]));
 
-  // print(sayHi({"name": "wuyu"}));
-}
+//   // print(sayHi({"name": "wuyu"}));
+// }
 
 // void main() {
 //   // data type
