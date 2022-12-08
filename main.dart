@@ -20,7 +20,6 @@ class Player with Strong, QuickRunner, Tall {
   Player({
     required this.team,
   });
-
 }
 
 class Horse with Strong, QuickRunner {}
@@ -32,6 +31,9 @@ void main() {
     team: Team.red,
   );
   player.runQuick();
+
+  var horse = Horse();
+  print(horse.strengthLevel);
 }
 
 // class Human {
